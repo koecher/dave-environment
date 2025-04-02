@@ -75,7 +75,9 @@ cd dave-environment
 docker-compose up -d
 ```
 
-## keycloak setup
+## keycloak
+
+### inital setup
 
 * start a webbrowser and open the keycloak management console on http://localhost:8080
 * use the default login with `admin` and `admin`
@@ -85,3 +87,23 @@ docker-compose up -d
   * open "Role mapping" tab, click on the button "Assign role", switch "Filter by client" to "Filter by realm roles", select "admin" (role_admin) and finally click on the "Assign" button
 * logoff keycloak and login with your new admin-user
 * delete the default "admin" user
+
+### inital realm "dave" setup
+
+TODO
+
+* start a webbrowser and open the keycloak management console on http://localhost:8080
+* login with your user with admin rights, as setup above
+* click in the left pane on "Keycloak, master" and then on the button "Create realm", then
+  * set the "realm name" to "dave" and make sure that the "Enabled" switch is set to "ON"
+  * click in the left pane on "Clients" and then in the middle top on the button "Import client"
+  * "Ressource file" click on browse and navigate to the folder of this repo, select the file `dave-environment/keycloak-realm-dave/dave_example_keycloak_realm_dave.json`
+  * wait for the import, check if the "Client Id" is being read to "dave", scroll down and click on the button "Save"
+  * open "Credentials" tab and click on the button "Regenerate" for the "client secret"; This secret will be used later!
+  * create the following users in the left pane "Users" of the realm "dave", each of them with
+    * "Email verified" switch on
+    * username, email, first and last name being set
+    * then click on create
+    * open "Credentials" tab and set a password
+    * open "Role mapping" and add the corresponding role (eg. ANWENDER, FACHADMIN, POWERUSER or EXTERNAL)
+    * 
