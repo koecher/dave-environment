@@ -1,0 +1,35 @@
+# WARNING: not for production use
+services:
+  elasticsearch:
+    container_name: dave-environment-elasticsearch
+    image: bitnami/elasticsearch:7.17.14
+    environment:
+      - discovery.type=single-node
+      - ELASTICSEARCH_USERNAME=elastic
+      - ELASTICSEARCH_PASSWORD=changeme
+      - xpack.security.enabled=true
+    ports:
+      - 9200:9200
+    volumes:
+      - ./docker-volumes/elasticsearch_data:/usr/share/elasticsearch/data
+  keycloak:
+    container_name: dave-environment-keycloak
+    image: quay.io/keycloak/keycloak:latest
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    ports:
+      - 8080:8080
+    command: start-dev
+
+  postgres_dave:
+    container_name: dave-environment-postgres
+    image: postgres:17
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=dave
+    ports:
+      - 5432:5432
+    volumes:
+      - ./docker-volumes/postgres_dave_data:/var/lib/postgresql/data
