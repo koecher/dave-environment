@@ -133,7 +133,7 @@ Next, grant privileges to the user `postgres` in the shell (`postgres=#`) with
 GRANT ALL PRIVILEGES ON DATABASE dave TO postgres;
 ```
 
-and check with `\l` if this was applied to the database "dave". NOTE: the column "Access privileges" should have changed from empty to now `=TC/postgres + postgres=CTc/postgres` for the database "dave" row. Log off the shell with `exit` or `quit` command or input "CTRL+d" with your keyboard.
+and check with `\l` if this was applied to the database "dave". NOTE: the column "Access privileges" should have changed from empty to now `=TC/postgres + postgres=CTc/postgres` for the database "dave" row.
 
 Create the "dave" user:
 
@@ -146,6 +146,8 @@ and
 ```
 GRANT ALL PRIVILEGES ON DATABASE dave TO dave;
 ```
+
+Log off the shell with `exit` or `quit` command or input "CTRL+d" with your keyboard.
 
 Next, read in the example database dump on your local terminal. Change directory to the path `postgresql-example-database-dave` of this repo.
 
