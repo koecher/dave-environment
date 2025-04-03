@@ -135,8 +135,22 @@ GRANT ALL PRIVILEGES ON DATABASE dave TO postgres;
 
 and check with `\l` if this was applied to the database "dave". NOTE: the column "Access privileges" should have changed from empty to now `=TC/postgres + postgres=CTc/postgres` for the database "dave" row. Log off the shell with `exit` or `quit` command or input "CTRL+d" with your keyboard.
 
+Create the "dave" user:
+
+```
+CREATE USER dave;
+```
+
+and
+
+```
+GRANT ALL PRIVILEGES ON DATABASE dave TO dave;
+```
+
 Next, read in the example database dump on your local terminal. Change directory to the path `postgresql-example-database-dave` of this repo.
 
 ```
 psql -h localhost -p 5432 -U postgres dave < dave_example_database_dump.sql
 ```
+
+The terminal output should not report any "ERROR" only confirmations that the sql file was read in.
