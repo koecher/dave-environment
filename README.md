@@ -104,3 +104,35 @@ docker-compose up -d
     * open "Credentials" tab and set a password
     * open "Role mapping" and add the corresponding role, i.e. "ANWENDER", "FACHADMIN", "POWERUSER" or "EXTERNAL", respectively.
   * NOTE: we have given here, for this sandbox example, in the client "dave" a composite role for "ANWENDER", i.e. precisely giving all other roles such that you can use the user "anwender" through all portals for checking the overall workflow. This needs to be adapted for a production system.
+
+## postgresql
+
+### inital setup
+
+If you have the postgresql tools installed locally on your system, you can do the following steps from your terminal. Otherwise you need to login to the docker container running the postgresql database. We assume here, that you can directly use the postgresql tools locally.
+
+The prepared docker container for the postgresql database has the default user `postgres` with the password `postgres` as given by the `docker-compose.yml`. NOTE: please change those credentials for a production system.
+
+Login to the database with the given password above
+
+```
+psql -h localhost -p 5432 -U postgres
+```
+
+In the postgres shell (`postgres=#`), List the databases with
+
+```
+\l
+```
+
+and check if a database named "dave" is being shown. If not, create the database with `CREATE DATABASE dave;`.
+
+Next, grant privileges to the user `postgres` in the shell (`postgres=#`) with
+
+```
+GRANT ALL PRIVILEGES ON DATABASE dave TO postgres;
+```
+
+and check with `\l` if this was applied to the database "dave". NOTE: the column "Access privileges" should have changed from empty to now `=TC/postgres + postgres=CTc/postgres` for the database "dave" row. Log off the shell with `exit` or `quit` command or input "CTRL+d" with your keyboard.
+
+Next, read in the example database dump on your local terminal. Change directory to the path `postgresql-example-database-dave` of this repo.
