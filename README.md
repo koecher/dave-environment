@@ -90,20 +90,15 @@ docker-compose up -d
 
 ### inital realm "dave" setup
 
-TODO
-
 * start a webbrowser and open the keycloak management console on http://localhost:8080
 * login with your user with admin rights, as setup above
 * click in the left pane on "Keycloak, master" and then on the button "Create realm", then
-  * set the "realm name" to "dave" and make sure that the "Enabled" switch is set to "ON"
-  * click in the left pane on "Clients" and then in the middle top on the button "Import client"
   * "Ressource file" click on browse and navigate to the folder of this repo, select the file `dave-environment/keycloak-realm-dave/dave_example_keycloak_realm_dave.json`
-  * wait for the import, check if the "Client Id" is being read to "dave", scroll down and click on the button "Save"
+  * check that the realm-name is detected as "dave", make sure that the "Enabled" switch is set to "ON" and click on the button "Create"
+  * click in the left pane on "Clients" and click on the client "dave"
   * open "Credentials" tab and click on the button "Regenerate" for the "client secret"; This secret will be used later!
-  * create the following users in the left pane "Users" of the realm "dave", each of them with
-    * "Email verified" switch on
-    * username, email, first and last name being set
-    * then click on create
+  * open "Users" from the left pane of the realm "dave", add the users: "anwender", "fachadmin", "poweruser" and "external", each of them with
+    * "Email verified" switch on, set the fields username, email, first and last name and then click on the button "Create".
     * open "Credentials" tab and set a password
-    * open "Role mapping" and add the corresponding role (eg. ANWENDER, FACHADMIN, POWERUSER or EXTERNAL)
-    * 
+    * open "Role mapping" and add the corresponding role, i.e. "ANWENDER", "FACHADMIN", "POWERUSER" or "EXTERNAL", respectively.
+  * NOTE: we have given here, for this sandbox example, in the client "dave" a composite role for "ANWENDER", i.e. precisely giving all other roles such that you can use the user "anwender" through all portals for checking the overall workflow. This needs to be adapted for a production system.
