@@ -9,7 +9,7 @@ This repo provides the supporting environment for dave running in docker and hel
 ```
 MIT License
 
-Copyright (c) 2025 Freie und Hansestadt Hamburg, Behörde für Verkehr und Mobilitätswende, Landesbetrieb Straßen, Brücken und Gewässer
+Copyright (c) 2025 Freie und Hansestadt Hamburg, Behörde für Verkehr und Mobilitätswende, Landesbetrieb Straßen, Brücken und Gewässer (LSBG)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -34,8 +34,8 @@ SOFTWARE.
 
 This repo is being maintained by City of Hamburg, (Freie und Hansestadt Hamburg, Behörde für Verkehr und Mobilitätswende, Landesbetrieb Straßen, Brücken und Gewässer, Geschäftsbereich X, Fachbereich XR DigiLab without any warrenty or support, as given by the license, by the developers:
 
-* Dr.-Ing. Uwe Köcher, Software-Architekt
-* N.N., Werkstudent
+* Dr.-Ing. Uwe Köcher, Software-Architekt, LSBG GB X FB XR
+* Anirban Dutta, Werkstudent Dev-Team, LSBG GB X FB XR
 
 ## Prerequisites
 
