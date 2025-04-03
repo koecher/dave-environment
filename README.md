@@ -66,6 +66,8 @@ make sure to have:
 * Xcode and commandline tools installed
 * docker and docker-compose installed on your system, e.g. via docker-desktop and keep care if you have the license for your usage
 * Homebrew installed; cf. https://brew.sh
+  * Optional: https://formulae.brew.sh/formula/postgresql@17 installed for the tools but do not run the service since this will block the port `5432`
+* Optional: pgAdmin, https://www.pgadmin.org, for PostgreSQL database inspection
 
 ## clone the repo & start the containers
 
