@@ -14,7 +14,7 @@ services:
       - ./docker-volumes/elasticsearch_data:/usr/share/elasticsearch/data
   keycloak:
     container_name: dave-environment-keycloak
-    image: quay.io/keycloak/keycloak:latest
+    image: quay.io/keycloak/keycloak:26.1.4
     environment:
       - KEYCLOAK_ADMIN=admin
       - KEYCLOAK_ADMIN_PASSWORD=admin
